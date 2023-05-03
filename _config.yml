@@ -8,7 +8,7 @@ subtitle: '哈哈哈哈哈'
 description: '磨剪子嘞~戗菜刀~~'
 keywords: 'null'
 author: '孤胆枪手'
-language: zh-cn
+language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
@@ -114,7 +114,8 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 #theme: landscape
-theme: hexo-theme-Claudia
+#theme: hexo-theme-Claudia
+theme: ocean
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
