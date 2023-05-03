@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+title: '孤胆枪手的小卖部'
+subtitle: '哈哈哈哈哈'
+description: '磨剪子嘞~戗菜刀~~'
+keywords: 'null'
+author: '孤胆枪手'
+language: zh-cn
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://alona789.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -31,18 +31,33 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
+# 新文章的文件名称
 new_post_name: :title.md # File name of new posts
+# 预设布局
 default_layout: post
+# 在中文和英文之间加入空格
+auto_spacing: false
+# 把标题转换为 title case
 titlecase: false # Transform title into titlecase
+# 在新标签中打开链接
 external_link:
+  # 在新标签中打开链接
   enable: true # Open external links in new tab
+  # 对整个网站（site）生效或仅对文章（post）生效
   field: site # Apply to the whole site
+  # 需要排除的域名。主域名和子域名如 www 需分别配置
   exclude: ''
+# 把文件名称转换为 (1) 小写或 (2) 大写
 filename_case: 0
+# 显示草稿
 render_drafts: false
+# 启动 Asset 文件夹
 post_asset_folder: false
-relative_link: false
+# 把链接改为与根目录的相对位址
+relative_link: true
+# 显示未来的文章
 future: true
+# 代码块的设置, 请参考 Highlight.js 进行设置
 highlight:
   enable: true
   line_number: true
@@ -50,6 +65,7 @@ highlight:
   tab_replace: ''
   wrap: true
   hljs: false
+# 代码块的设置, 请参考 PrismJS 进行设置
 prismjs:
   enable: false
   preprocess: true
@@ -103,4 +119,6 @@ theme: hexo-theme-Claudia
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: 'git'
+  repo: https://github.com/alona789/alona789.github.io
+  branch: gh-pages
