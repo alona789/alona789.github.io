@@ -41,12 +41,12 @@ show_copy_btn: true
 
 # Gitalk
 gitalk:
-  enable: false # true
-  clientID: # GitHub Application Client ID
-  clientSecret: # Client Secret
-  repo: # Repository name
-  owner: # GitHub ID
-  admin: # GitHub ID
+  enable: true # true
+  clientID: 568642e5a62b932b6dbb # GitHub Application Client ID
+  clientSecret: 4e2fa5f75b2be95a26c0686cf40a6be71c0314f9 # Client Secret
+  repo: blog-repo # Repository name
+  owner: alona789 # GitHub ID
+  admin: alona789 # GitHub ID
 
 # Valine
 valine:
