@@ -1,7 +1,9 @@
 ---
 title: 移动光猫+老毛子Padavan开启IPv6
 date: 2023-06-04 23:59:34
-tags:
+tags: 
+  - Padavan
+  - IPv6
 ---
 
 # 移动光猫+老毛子Padavan开启IPv6
@@ -10,7 +12,7 @@ tags:
 ## 光猫配置
 
 首先搜一下我使用的光猫版本有超级管理账号的，用户名 `CMCCAdmin`，密码：`aDm8H%MdA`，光猫的默认后台是 `http://192.168.1.1/`，登陆进去就是这样，
-![1.png](%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPV6%2F1.png)
+![1.png](移动光猫-老毛子Padavan开启IPv6/1.png)
 
 然后 网络->宽带设置->链接名称改成 `2_INTERNET_R_VID_4031`，其他的会自动填充上，（为了以防万一，可以先把网页保存一份，防止丢失密码），点确认。
 ![img.png](移动光猫-老毛子Padavan开启IPv6/img.png)
