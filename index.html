@@ -1,342 +1,187 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>孤胆枪手的小卖部 - 哈哈哈哈哈</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/img/pwa/favicon.ico"><!-- index.css--><link rel="stylesheet" href="css/index.css?v=2.1.8"><!-- inject head--><link rel="canonical" href="https://alona789.github.io/"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"><!-- aplayer--><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description" content="磨剪子嘞~戗菜刀~~"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="孤胆枪手的小卖部"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/pwa/favicon.ico"><link rel="apple-touch-icon" href="/img/pwa/favicon.ico" sizes="180x180"><script>console.log(' %c Solitude %c ' + '2.1.8' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  
-  <meta name="keywords" content="null">
-  
-  
-  <meta name="description" content="磨剪子嘞~戗菜刀~~">
-  
-  <title>
-    
-    孤胆枪手的小卖部
-  </title>
-  <!-- Icon -->
-  
-    <link rel="shortcut icon" href="/favicon.ico">
-    
-  
-<link rel="stylesheet" href="../../../../css/style.css">
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
 
-  
-  
-<link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.min.css">
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
 
-  
-  
-<script src="../../../../js/pace.min.js"></script>
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
 
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="atom.xml" title="孤胆枪手的小卖部" type="application/atom+xml">
-</head>
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
 
-<body>
-  <main class="content">
-    <section class="jumbotron">
-  <div class="video">
-    
-    <div class="video-frame">
-      <img src="/images/ocean/overlay-hero.png" alt="Decorative image frame">
-    </div>
-    
-    <div class="video-media">
-      <video playsinline="" autoplay="" loop="" muted="" data-autoplay="" poster="/images/ocean/ocean.png"
-        x5-video-player-type="h5">
-        <source src="/images/ocean/ocean.mp4" type="video/mp4">
-        <source src="/images/ocean/ocean.ogv" type="video/ogg">
-        <source src="/images/ocean/ocean.webm" type="video/webm">
-        <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-      <div class="video-overlay"></div>
-    </div>
-    <div class="video-inner text-center text-white">
-      <h1><a href="index.html">孤胆枪手的小卖部</a></h1>
-      <p>哈哈哈哈哈</p>
-      <div><img src="/images/hexo-inverted.svg" class="brand" alt="孤胆枪手的小卖部"></div>
-    </div>
-    <div class="video-learn-more">
-      <a class="anchor" href="#landingpage"><i class="fe fe-mouse"></i></a>
-    </div>
-  </div>
-</section>
-<div id="landingpage">
-  <section class="outer">
-  <article class="articles">
-    
-    <h1 class="page-type-title"></h1>
-    
-    
-    <article id="post-hello-world" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
+                if (name && keyObj[name]) return
 
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-  
-  <h2 class="article-title" itemprop="name">
-    <a href="2023/08/15/hello-world/">Hello World</a>
-  </h2>
-  
-  
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="2023/08/15/hello-world/" class="article-date">
-  <time datetime="2023-08-15T02:57:32.635Z" itemprop="datePublished">2023-08-15</time>
-</a>
-      
-    </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        
-      
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://alona789.github.io/2023/08/15/hello-world/" data-id="cllbpr9m90000gfou29ze6rrk" class="article-share-link">
-        分享
-      </a>
-      
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-    
-    <article id="post-移动光猫-老毛子Padavan开启IPv6" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-  
-  <h2 class="article-title" itemprop="name">
-    <a href="2023/06/04/%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPv6/">移动光猫+老毛子Padavan开启IPv6</a>
-  </h2>
-  
-  
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="2023/06/04/%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPv6/" class="article-date">
-  <time datetime="2023-06-04T15:59:34.000Z" itemprop="datePublished">2023-06-04</time>
-</a>
-      
-    </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        
-      
-      
-        <h1 id="移动光猫-老毛子Padavan开启IPv6"><a href="#移动光猫-老毛子Padavan开启IPv6" class="headerlink" title="移动光猫+老毛子Padavan开启IPv6"></a>移动光猫+老毛子Padavan开启IPv6</h1><blockquote>
-<p>多图杀猫</p>
-</blockquote>
-<h2 id="光猫配置"><a href="#光猫配置" class="headerlink" title="光猫配置"></a>光猫配置</h2><p>首先搜一下我使用的光猫版本有超级管理账号的，用户名 <code>CMCCAdmin</code>，密码：<code>aDm8H%MdA</code>，光猫的默认后台是 <code>http://192.168.1.1/</code>，登陆进去就是这样，<br><img src="%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPV6/1.png" alt="1.png"></p>
-<p>然后 网络-&gt;宽带设置-&gt;链接名称改成 <code>2_INTERNET_R_VID_4031</code>，其他的会自动填充上，（为了以防万一，可以先把网页保存一份，防止丢失密码），点确认。<br><img src="%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPv6/img.png" alt="img.png"></p>
-<p>端口绑定可以不选择 <code>SSID</code> 开头的，毕竟谁会用光猫自带的WiFi呢？</p>
-<p>然后 <code>LAN侧地址配置</code>，左侧 <code>IPv6配置</code>-&gt; <code>RA配置</code> 勾上 <code>M</code>、<code>O</code>，确认。<br><img src="%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPv6/img_1.png" alt="img_1.png"></p>
-<p>接着 <code>DHCP配置</code>，取消勾选 <code>启动DHCP服务</code>，确认。<br><img src="%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPv6/img_2.png" alt="img_2.png"></p>
-<p>继续 <code>IPv6前缀管理</code> 已有的前缀点下修改，然后勾选 <code>RA</code> 和 <code>DHCPv6</code>（貌似不勾选也行），修改。<br><img src="%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPv6/img_3.png" alt="img_3.png"></p>
-<p>然后 <code>安全</code>-&gt;<code>攻击保护设置</code> 取消勾选<code>Ipv6spi</code>，否则无法访问ipv6上的服务。确定。<br><img src="%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPv6/img_4.png" alt="img_4.png"></p>
-<p>光猫设置完成。此时可以试试电脑直连光猫，看下能否获取到 <code>IPv6</code> 的ip。</p>
-<p>也可以使用 <a target="_blank" rel="noopener" href="https://www.test-ipv6.com/">https://www.test-ipv6.com/</a> 测试一下（PS：记得关代理或者给它加白名单）。</p>
-<h2 id="老毛子-Padavan-设置"><a href="#老毛子-Padavan-设置" class="headerlink" title="老毛子 Padavan 设置"></a>老毛子 Padavan 设置</h2><p>首先把光猫的 LAN 口链接路由器的 WAN 口，然后登陆路由器后台，<code>高级设置</code>-&gt;<code>外部网络</code>-&gt;<code>IPv6设置</code>，如下设置。然后应用设置<br><img src="%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPv6/img_5.png" alt="img_5.png"></p>
-<p>然后 <code>网络地图</code>-&gt;<code>外部网络状态</code>，可以看到路由器本身是获取到 <code>ipv6</code> 地址了<br><img src="%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPv6/img_6.png" alt="img_6.png"></p>
-<p>看下下面的设备状态，应该也是获取到 <code>ipv6</code> 的。<br><img src="%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPv6/img_7.png" alt="img_7.png"></p>
-<p>先本地 <code>ipconfig</code> 一下，是得到<br><img src="%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPv6/img_8.png" alt="img_8.png"></p>
-<p>再次上 <a target="_blank" rel="noopener" href="https://www.test-ipv6.com/">https://www.test-ipv6.com/</a> 测试一下。</p>
-<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/akk2r688/">https://post.smzdm.com/p/akk2r688/</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.v2ex.com/t/799717">https://www.v2ex.com/t/799717</a></li>
-<li><a target="_blank" rel="noopener" href="https://cshihong.github.io/2018/01/29/IPv6%E9%82%BB%E5%B1%85%E5%8F%91%E7%8E%B0%E5%8D%8F%E8%AE%AE/">https://cshihong.github.io/2018/01/29/IPv6%E9%82%BB%E5%B1%85%E5%8F%91%E7%8E%B0%E5%8D%8F%E8%AE%AE/</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/379913035">https://www.zhihu.com/question/379913035</a></li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/452369365">https://zhuanlan.zhihu.com/p/452369365</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-4059321-1-1.html">https://www.right.com.cn/forum/thread-4059321-1-1.html</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.right.com.cn/FORUM/thread-1048239-1-1.html">https://www.right.com.cn/FORUM/thread-1048239-1-1.html</a></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://alona789.github.io/2023/06/04/%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPv6/" data-id="cllbpr9mg0001gfoucsw04r3f" class="article-share-link">
-        分享
-      </a>
-      
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-    
-  </article>
-  
-
-  
-</section>
-</div>
-    <footer class="footer">
-  <div class="outer">
-    <ul class="list-inline">
-      <li>孤胆枪手的小卖部 &copy; 2023</li>
-      
-        <li>
-          
-            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
-            
-        </li>
-      
-      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
-    </ul>
-    <p><ul class="list-inline">
-  
-  <li><i class="fe fe-bar-chart tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_site_pv"></span></li>
-  
-  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
-  
-</ul></p>
-  </div>
-</footer>
-  </main>
-  <aside class="sidebar">
-    <button class="navbar-toggle"></button>
-<nav class="navbar">
-  
-  <div class="logo">
-    <a href="index.html"><img src="/images/hexo.svg" alt="孤胆枪手的小卖部"></a>
-  </div>
-  
-  <ul class="nav nav-main">
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="index.html">Home</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/archives">Archives</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/gallery">Gallery</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/about">About</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link nav-item-search" title="搜索">
-        <i class="fe fe-search"></i>
-        搜索
-      </a>
-    </li>
-  </ul>
-</nav>
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      <div class="totop" id="totop">
-  <i class="fe fe-rocket"></i>
-</div>
-    </li>
-    <li class="nav-item">
-      
-      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-        <i class="fe fe-feed"></i>
-      </a>
-      
-    </li>
-  </ul>
-</nav>
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-  </aside>
-  
-<script src="../../../../js/jquery-2.0.3.min.js"></script>
-
-
-<script src="../../../../js/jquery.justifiedGallery.min.js"></script>
-
-
-<script src="../../../../js/lazyload.min.js"></script>
-
-
-<script src="../../../../js/busuanzi-2.3.pure.min.js"></script>
-
-
-
-<script src="../../../../fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-
-
-<script src="../../../../js/ocean.js"></script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+          },
         }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+    })()</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: undefined,
+    localsearch: undefined,
+    runtime: '2023-04-20 00:00:00',
+    lazyload: {
+        enable: false,
+        error: '/img/error_load.avif'
+    },
+    copyright: false,
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可"},
+    aside: {
+        sayhello: {
+            morning: "✨ 早上好，新的一天开始了",
+            noon: "🍲 午餐时间",
+            afternoon: "🌞 下午好",
+            night: "早点休息",
+            goodnight: "晚安 😴",
+        },
+        sayhello2: [],
+        sayhello3: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: false
+    },
+    comment: false,
+    lightbox: 'null',
+    post_ai: false,
+    right_menu: false,
+    translate: {"translateDelay":0,"defaultEncoding":2},
+    lure: false,
+    expire: false,
+};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+    is_post: false,
+    is_page: false,
+    is_home: true,
+    page: 'solitude',
+    toc: false,
+    comment: false,
+    ai_text: false,
+    color: false,
+}</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="atom.xml" title="孤胆枪手的小卖部" type="application/atom+xml">
+</head><body id="body" data-type="solitude"><!-- universe--><!-- background img--><!-- loading--><!-- console--><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fa-solid fa-circle-half-stroke"></i><span>显示模式</span></span></div><span class="sidebar-menu-item-title">标签</span><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"></div></div></div></div><!-- keyboard--><!-- righhtside--><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a id="site-name" href="index.html" title="返回博客主页"><span class="title">Solitude</span><i class="solitude fa-solid fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">孤胆枪手的小卖部</a></div></div><div id="menus"></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude fa-solid fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fa-solid fa-bars"></i></a></div></div></div></nav></header><main class="layout" id="content-inner"><div id="home"><div id="category-bar"><div class="category-bar-items home" id="category-bar-items"><div class="category-bar-item select" id="category-bar-home"><a href="index.html">推荐</a></div><div class="category-bar-item"><a href="/archives/">全部文章</a></div></div><div class="category-bar-right"><a class="category-bar-more" href="/categories/">更多</a></div></div><div class="recent-posts" id="recent-posts"><div class="recent-post-item" onclick="pjax.loadUrl('2024/11/22/hello-world/')"><div class="post_cover"><a href="2024/11/22/hello-world/" title="Hello World"><img class="post_bg" src="/img/default.avif" alt="Hello World"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><span class="original">最新</span><a class="unvisited-post" href="2024/11/22/hello-world/">未读</a></div><a class="article-title" href="2024/11/22/hello-world/" title="Hello World">Hello World</a></div><div class="article-meta-wrap"><span class="article-meta tags"></span><span class="post-meta-date"><time datetime="2024-11-22T07:34:57.959Z"></time></span></div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('2023/06/04/%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPv6/')"><div class="post_cover"><a href="2023/06/04/%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPv6/" title="移动光猫+老毛子Padavan开启IPv6"><img class="post_bg" src="/img/default.avif" alt="移动光猫+老毛子Padavan开启IPv6"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><a class="unvisited-post" href="2023/06/04/%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPv6/">未读</a></div><a class="article-title" href="2023/06/04/%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB-%E8%80%81%E6%AF%9B%E5%AD%90Padavan%E5%BC%80%E5%90%AFIPv6/" title="移动光猫+老毛子Padavan开启IPv6">移动光猫+老毛子Padavan开启IPv6</a></div><div class="article-meta-wrap"><span class="article-meta tags"></span><span class="post-meta-date"><time datetime="2023-06-04T15:59:34.000Z"></time></span></div></div></div><!-- pagination--><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><div class="toPageGroup"><input id="toPageText" oninput="value=value.replace(/[^0-9]/g,'')" maxlength="3" title="跳转到指定页面" onkeyup="if (this.value === '0') this.value = ''"><a id="toPageButton" onclick="sco.toPage()"><i class="solitude fa-solid fa-angles-right"></i></a></div></div></nav></div></div><!-- aside--><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="author-info__top-group"><div class="author-info__sayhi" id="author-info__sayhi" onclick="sco.changeSayHelloText()">sayhello.morning</div></div></div><div class="avatar-img-group"><img class="avatar-img" alt="头像" src="/img/avatar.avif"></div><div class="author-info__description_group"><div class="author-info__description"></div><div class="author-info__description2"></div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/about/"><div class="author-info__name">孤胆枪手</div><div class="author-info__desc">哈哈哈哈哈</div></a><div class="card-info-social-icons is-center"></div></div></div></div><div class="sticky_layout"><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="webinfo"><div class="webinfo-item"><div class="webinfo-item-title"><i class="item-icon fa-solid fa-folder-closed"></i><div class="item-name">文章总数 :</div></div><div class="item-count">2</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="item-icon solitude fa-solid fa-calendar-day"></i><div class="item-name">建站天数 :</div></div><div class="item-count" id="runtimeshow"></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="item-icon solitude fa-solid fa-arrows-rotate"></i><div class="item-name">最后更新 :</div></div><time class="item-count" datetime="2024-11-22T07:35:16.060Z"></time></div></div></div></div></div></main><footer id="footer"><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2023 - 2024 By&nbsp;<a class="footer-bar-link" href="index.html">孤胆枪手</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" alt="Theme">Theme</a></div></div></div></footer></div><!-- right_menu--><!-- inject body--><div><script src="js/utils.js?v=2.1.8"></script><script src="js/main.js?v=2.1.8"></script><script src="js/third_party/waterfall.min.js?v=2.1.8"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pjax/0.2.8/pjax.min.js"></script><script src="js/tw_cn.js?v=2.1.8"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script><div class="js-pjax"></div></div><!-- pjax--><script>const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
 
-</html>
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
+
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- google adsense--><!-- search--><!-- Tianli-Talk--><!-- music--></body></html>
+        <script>
+            const posts = ["2024/11/22/hello-world/","2023/06/04/移动光猫-老毛子Padavan开启IPv6/"];
+            function toRandomPost() {
+                const randomPost = posts[Math.floor(Math.random() * posts.length)];
+                pjax.loadUrl(GLOBAL_CONFIG.root + randomPost);
+            }
+        </script>
