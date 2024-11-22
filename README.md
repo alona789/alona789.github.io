@@ -8,6 +8,9 @@
    hexo server # 启动服务
 2. 打开 localhost:4000 显示如下![安装成功](static/img.png)
 
+### 部署
+1. 
+
 ### 主题
 1. 浏览主题 https://hexo.io/themes/
 2. 找到对应的 github，从 github 上下载主题文件放到博客的[themes](themes) 目录下
@@ -22,6 +25,29 @@ yarn add hexo-filter-flowchart
 yarn add hexo-renderer-mathjax
 ```
 
+### 增加评论组件
+1. https://zhwangart.com/2018/12/06/Gitalk/
+2. https://github.com/gitalk/gitalk/issues/150
+
+
+### 升级Hexo
+```shell
+npm install -g hexo-cli
+hexo version
+
+npm install -g npm-check
+npm-check
+
+npm install -g npm-upgrade
+npm-upgrade
+
+#npm update -g
+#npm install -g npm
+
+hexo clean #清理hexo数据并重新生成页面并部署
+hexo g -s
+hexo d
+```
 ## 坑
 1. 免费版只支持 public 访问权限的仓库生成 pages
 2. 
