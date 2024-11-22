@@ -53,8 +53,8 @@ filename_case: 0
 render_drafts: false
 # 启动 Asset 文件夹
 post_asset_folder: true
-# 把链接改为与根目录的相对位址
-relative_link: true
+# 把链接改为与根目录的相对位置，"hexo-asset-img": "^1.1.0" 替换图片的路径
+relative_link: false
 # 显示未来的文章
 future: true
 # 代码块的设置, 请参考 Highlight.js 进行设置
@@ -116,6 +116,7 @@ ignore:
 #theme: landscape
 #theme: hexo-theme-Claudia
 theme: solitude
+#theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
