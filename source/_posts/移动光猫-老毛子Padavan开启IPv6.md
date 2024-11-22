@@ -1,6 +1,8 @@
 ---
 title: 移动光猫+老毛子Padavan开启IPv6
 date: 2023-06-04 23:59:34
+categories:
+  - 路由器
 tags: 
   - Padavan
   - IPv6
