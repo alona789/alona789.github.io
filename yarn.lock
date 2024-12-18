@@ -870,9 +870,9 @@ hexo-theme-landscape@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/hexo-theme-landscape/-/hexo-theme-landscape-1.0.0.tgz#43a549ebb2bea73196200ee4397feb764131a481"
 
-hexo-theme-solitude@^2.1.10:
-  version "2.1.10"
-  resolved "https://registry.yarnpkg.com/hexo-theme-solitude/-/hexo-theme-solitude-2.1.10.tgz#ee91efed7f65b5c90385dbb972bec23c4cb6f4bf"
+hexo-theme-solitude@^2.1.14:
+  version "2.1.14"
+  resolved "https://registry.yarnpkg.com/hexo-theme-solitude/-/hexo-theme-solitude-2.1.14.tgz#d5c51bee7cca9522f72a3f77a547df1dabbd4342"
   dependencies:
     hexo-renderer-pug "^3.0.0"
     hexo-renderer-stylus "^3.0.0"
